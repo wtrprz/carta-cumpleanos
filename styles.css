@@ -93,7 +93,7 @@ body {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    z-index: 5; /* más alto para que se vean */
+    z-index: 100; /* <-- Cámbialo de 5 a 100 para que pase al frente */
     overflow: visible;
 }
 
@@ -104,7 +104,7 @@ body {
     object-fit: contain;
     opacity: 0.9;
     animation: flotar 4.5s ease-in-out infinite;
-    z-index: 5;
+    z-index: 100; /* <-- Cámbialo también a 100 */
 }
 
 /* Posiciones más hacia los bordes para que no se escondan detrás de la tarjeta */
@@ -126,9 +126,10 @@ body {
 }
 
 /* Ajuste especial para celulares */
+/* Ajuste especial para celulares */
 @media (max-width: 500px) {
     .deco {
-        width: 52px ;
+        width: 52px;
         height: 52px;
         opacity: 0.95;
     }
