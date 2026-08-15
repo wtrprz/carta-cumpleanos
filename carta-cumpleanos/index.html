@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños!</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- PANTALLA DE ENTRADA -->
+    <div id="pantalla-inicio" class="pantalla activa">
+        <div class="contenido-inicio">
+            <img src="images/monito.jpg" alt="Monito" class="monito">
+            <h1>¡Tienes un regalo!</h1>
+            <p>Haz clic para abrirlo</p>
+            <button id="btn-abrir" class="btn-abrir">Abrir 🎁</button>
+        </div>
+    </div>
+
+    <!-- PANTALLA DE LA CARTA -->
+    <div id="pantalla-carta" class="pantalla">
+
+        <!-- Decoraciones flotantes (monitos, hamsters y dibujitos) -->
+        <!-- Decoraciones flotantes -->
+     <div class="decoraciones">
+        <img src="images/cumplepecas.jpg" class="deco deco1" alt="">
+        <img src="images/hamster.jpg" class="deco deco2" alt="">
+        <img src="images/hamster2.jpg" class="deco deco3" alt="">
+        <img src="images/niña.jpg" class="deco deco4" alt="">
+        <img src="images/random.jpg" class="deco deco5" alt="">
+        <img src="images/snoopycumple.jpg" class="deco deco6" alt="">
+        <img src="images/omgsibeba.jpg" class="deco deco7" alt="">
+        <img src="images/diva.jpg" class="deco deco8" alt="">
+        <img src="images/kimberly.jpg" class="deco deco9" alt="">
+        <img src="images/lupita.jpg" class="deco deco10" alt="">
+        <img src="images/aimep3.jpg" class="deco deco11" alt="">
+       <!-- Agrega más si quieres -->
+     </div>
+
+        <div class="card">
+            <div class="header">
+                <h1>You're not 19 Anymore ❤️</h1>
+                <h2>¡Feliz Cumpleaños!</h2>
+                <p class="nombre">Para la Ing. Pecas</p>
+            </div>
+
+            <div class="foto-principal">
+                <img src="images/portada.jpg" alt="Foto principal">
+            </div>
+
+            <!-- MENSAJE GRANDE (varios párrafos) -->
+            <div class="mensaje">
+                <p class="gran-mensaje">
+                Hola, Compañera 💜
+                </p>
+                <p class="gran-mensaje">
+                    ¿O cómo fué que me dijo la primera vez? JAJAJAJAJAJ
+                </p>
+                <p class="gran-mensaje">
+                    Amistad Pecas, happy b-day, le deseo el mejor de los
+                    cumpleaños, espero que se la pase super bien y que disfrute de 
+                    esta pequeña carta digital que estoy escribiendo a mano
+                    (de algo me sirvió la clase de prog int).
+                </p>
+                <p class="gran-mensaje">
+                    Gracias por ser esa amistad con la que podemos hablar de cualquier tema
+                    sin perder la gracia y la risa y mucho menos sentirnos juzgados
+                    Thanks por hacer que las clases más pesadas de la U se sientan 
+                    mas ligeras y poder sacar una risa de cualquier situación negativa.
+                </p> 
+                <p class="gran-mensaje">    
+                    Gracias pecas por cada tik tok y risa que manda y que nos representa, por esos 
+                    podcast de storytime que manda, por las peliculas que vemos, por los mensajes
+                    positivos antes de cada exposición, examen o situación amarga en general
+                    por estar siempre de mi lado en situaciones injustificables y ni modo. 💜
+                </p>    
+
+                <p class="gran-mensaje">
+                    Gracias por ser esa amistad con las que nos regalamos el titulo de ingenieros 
+                    aunque nos falta media carrera por acabar XDXDXDXDXD, por eso y  muchas cosas 
+                    mas, gracias pecas, son demasiadas para recordar cada una de ellas pero estoy seguro 
+                    que todas las personas que tambien tienen la dicha de conocerla y pertenecer a su circulo 
+                    social, me secundan en todo esto.
+                </p>
+                <p class="gran-mensaje">
+                    Espero que esta nueva etapa y decada de los 20s sea de mucho exito,
+                    una etapa muy especial y excelente para cumplir todas las metas y sueños
+                    como graduarnos por ejemplo, y esos viajes que tenemos pendientes a equis 
+                    pais del mundo pero que estaremos ahi sin duda alguna, una etapa perfecta 
+                    para que me acompañe a vagar en mi runner akesi, y seguir escribiendo mas
+                    recuerdos, porque si de lejos tenemos cosas que contar, en persona escribimos
+                    la odisea.
+                </p>
+                <p class="gran-mensaje destacado">
+                    ¡La queremos muchisimo pecas, yo, rocco 
+                    y sus demas amigos y familia no lo olvide! 
+                </p>
+            </div>
+
+
+            <button id="btn-sorpresa" class="btn">¡Haz clic para una sorpresa!</button>
+
+            <div id="sorpresa" class="sorpresa oculto">
+                <p>🎉 ¡Riase todo el dia akesi! 🎉</p>
+            </div>
+        </div>
+    </div>
+
+    <audio id="musica" src="assets/musica.mp3" loop></audio>
+    <script src="js/script.js"></script>
+</body>
+</html>
