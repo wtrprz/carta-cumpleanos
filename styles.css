@@ -85,50 +85,57 @@ body {
 }
 
 /* ===== DECORACIONES FLOTANTES ===== */
+/* ===== DECORACIONES ===== */
 .decoraciones {
-    position: absolute;          /* cambiado de fixed a absolute */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
-    z-index: 1;
-    overflow: hidden;
+    z-index: 5; /* más alto para que se vean */
+    overflow: visible;
 }
 
 .deco {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 58px;
+    height: 58px;
     object-fit: contain;
-    opacity: 0.85;
-    animation: flotar 5s ease-in-out infinite;
+    opacity: 0.9;
+    animation: flotar 4.5s ease-in-out infinite;
+    z-index: 5;
 }
 
-/* Posiciones (se ven bien en celular y PC) */
-.deco1  { top: 4%;  left: 3%;   width: 65px; animation-delay: 0s; }
-.deco2  { top: 5%;  right: 3%;  width: 60px; animation-delay: 0.7s; }
-.deco3  { top: 22%; left: 2%;   width: 55px; animation-delay: 1.4s; }
-.deco4  { top: 20%; right: 2%;  width: 58px; animation-delay: 0.3s; }
-.deco5  { top: 42%; left: 2%;   width: 60px; animation-delay: 1.8s; }
-.deco6  { top: 40%; right: 2%;  width: 62px; animation-delay: 1.1s; }
-.deco7  { top: 62%; left: 3%;   width: 58px; animation-delay: 0.5s; }
-.deco8  { top: 65%; right: 3%;  width: 60px; animation-delay: 1.6s; }
-.deco9  { top: 15%; left: 20%;  width: 50px; animation-delay: 0.9s; }
-.deco10 { top: 50%; right: 15%; width: 52px; animation-delay: 2s; }
-.deco11 { top: 78%; left: 25%;  width: 55px; animation-delay: 0.2s; }
+/* Posiciones más hacia los bordes para que no se escondan detrás de la tarjeta */
+.deco1  { top: 3%;  left: 2%; }
+.deco2  { top: 3%;  right: 2%; }
+.deco3  { top: 18%; left: 1%; }
+.deco4  { top: 18%; right: 1%; }
+.deco5  { top: 38%; left: 1%; }
+.deco6  { top: 38%; right: 1%; }
+.deco7  { top: 58%; left: 2%; }
+.deco8  { top: 58%; right: 2%; }
+.deco9  { top: 78%; left: 4%; }
+.deco10 { top: 78%; right: 4%; }
+.deco11 { top: 48%; left: 8%; width: 50px; }
 
 @keyframes flotar {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    50% { transform: translateY(-10px); }
 }
 
-/* En pantallas pequeñas hacemos las decoraciones un poco más chicas */
-@media (max-width: 480px) {
+/* Ajuste especial para celulares */
+@media (max-width: 500px) {
     .deco {
-        width: 48px;
-        height: 48px;
-        opacity: 0.75;
+        width: 52px ;
+        height: 52px;
+        opacity: 0.95;
+    }
+    
+    .card {
+        position: relative;
+        z-index: 10;
     }
 }
 
