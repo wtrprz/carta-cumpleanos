@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Pantallas */
+.pantalla {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.pantalla.activa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== PANTALLA DE INICIO ===== */
+#pantalla-inicio {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+}
+
+.contenido-inicio {
+    text-align: center;
+    padding: 30px 20px;
+    animation: aparecer 0.8s ease;
+}
+
+.monito {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid white;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    margin-bottom: 25px;
+}
+
+.contenido-inicio h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.contenido-inicio p {
+    color: rgba(255,255,255,0.95);
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+}
+
+.btn-abrir {
+    background: white;
+    color: #ff6b6b;
+    border: none;
+    padding: 16px 45px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.btn-abrir:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* ===== PANTALLA DE LA CARTA ===== */
+#pantalla-carta {
+    padding: 20px;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+}
+
+/* ===== DECORACIONES FLOTANTES ===== */
+/* ===== DECORACIONES FLOTANTES ===== */
+.decoraciones {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.deco {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    opacity: 0.9;
+    animation: flotar 5s ease-in-out infinite;
+}
+
+/* Posiciones bien repartidas */
+.deco1  { top: 6%;  left: 4%;   width: 75px; animation-delay: 0s;    transform: rotate(-12deg); }
+.deco2  { top: 8%;  right: 5%;  width: 70px; animation-delay: 0.8s;  transform: rotate(15deg); }
+.deco3  { top: 28%; left: 2%;   width: 60px; animation-delay: 1.5s;  transform: rotate(-8deg); }
+.deco4  { top: 25%; right: 3%;  width: 65px; animation-delay: 0.4s;  transform: rotate(10deg); }
+.deco5  { top: 48%; left: 3%;   width: 68px; animation-delay: 2s;    transform: rotate(-15deg); }
+.deco6  { top: 45%; right: 4%;  width: 72px; animation-delay: 1.2s;  transform: rotate(8deg); }
+.deco7  { top: 68%; left: 5%;   width: 65px; animation-delay: 0.6s;  transform: rotate(-5deg); }
+.deco8  { top: 70%; right: 6%;  width: 70px; animation-delay: 1.8s;  transform: rotate(12deg); }
+.deco9  { top: 18%; left: 22%;  width: 55px; animation-delay: 1s;    transform: rotate(5deg); }
+.deco10 { top: 55%; right: 18%; width: 60px; animation-delay: 2.3s;  transform: rotate(-10deg); }
+.deco11 { top: 82%; left: 30%;  width: 65px; animation-delay: 0.3s;  transform: rotate(18deg); }
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+    50% { transform: translateY(-15px) rotate(var(--rot, 0deg)); }
+}
+
+/* Animación suave de flotar */
+@keyframes flotar {
+    0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+    50% { transform: translateY(-18px) rotate(var(--rot, 0deg)); }
+}
+
+/* La tarjeta queda por encima de las decoraciones */
+.card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    max-width: 480px;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin: 20px auto;
+    animation: aparecer 0.7s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.header {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    color: white;
+    padding: 30px 20px;
+}
+
+.header h1 {
+    font-size: 2.1rem;
+    margin-bottom: 8px;
+}
+
+.nombre {
+    font-size: 1.15rem;
+    opacity: 0.95;
+}
+
+.foto-principal img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.mensaje {
+    padding: 28px 24px 20px;
+}
+
+.gran-mensaje {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: #333;
+    margin-bottom: 18px;
+}
+
+.gran-mensaje.destacado {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #ff4757;
+    margin-top: 10px;
+}
+
+.galeria {
+    padding: 0 15px 25px;
+}
+
+.galeria h2 {
+    margin-bottom: 15px;
+    color: #ff6b6b;
+    font-size: 1.3rem;
+}
+
+.grid-fotos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.grid-fotos img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+
+.grid-fotos img:hover {
+    transform: scale(1.05);
+}
+
+.btn {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px 0 30px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,107,107,0.4);
+}
+
+.sorpresa {
+    background: #fff0f0;
+    padding: 20px;
+    margin: 0 20px 25px;
+    border-radius: 16px;
+    font-size: 1.15rem;
+    color: #ff4757;
+    animation: aparecer 0.5s ease;
+}
+
+.oculto {
+    display: none;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .monito {
+        width: 180px;
+        height: 180px;
+    }
+    .contenido-inicio h1 {
+        font-size: 1.7rem;
+    }
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    .deco {
+        width: 50px ;
+        height: 50px ;
+    }
+    .deco1, .deco4, .deco7 {
+        width: 60px ;
+    }
+}
