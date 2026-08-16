@@ -28,12 +28,16 @@ body {
 /* ===== PANTALLA DE INICIO ===== */
 #pantalla-inicio {
     background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    position: relative; /* Para sostener las decoraciones */
+    overflow: hidden;
 }
 
 .contenido-inicio {
     text-align: center;
     padding: 30px 20px;
     animation: aparecer 0.8s ease;
+    position: relative;
+    z-index: 10; /* Para que el botón y el texto queden por encima de las fotitos flotantes */
 }
 
 .monito {
@@ -87,24 +91,25 @@ body {
 /* ===== DECORACIONES FLOTANTES ===== */
 /* ===== DECORACIONES ===== */
 .decoraciones {
-    position: fixed;
+    position: absolute; /* En lugar de fixed, para que pertenezca solo a esta pantalla */
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none; /* ESTO ES CLAVE: Permite cliquear el texto y botones que están debajo */
-    z-index: 200; /* <-- Cámbialo a 200 para que flote sobre todo */
-    overflow: visible;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
 }
 
 .deco {
     position: absolute;
     width: 58px;
     height: 58px;
-    object-fit: contain;
-    opacity: 0.9;
+    object-fit: cover; /* Cambia a cover si son fotos de personas */
+    border-radius: 50%; /* Si quieres que se vean redonditas */
+    border: 2px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     animation: flotar 4.5s ease-in-out infinite;
-    z-index: 200; /* <-- Asegúrate de que también sea 200 */
+    z-index: 2;
 }
 
 /* Posiciones más hacia los bordes para que no se escondan detrás de la tarjeta */
